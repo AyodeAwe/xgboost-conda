@@ -34,5 +34,5 @@ function sed_runner() {
 sed_runner "/^export RAPIDS_VERSION/ s/\".*\"/\"${NEXT_SHORT_TAG}\"/g" ci/build_python.sh
 
 for FILE in .github/workflows/*.yaml; do
-  sed_runner "/shared-action-workflows/ s/@.*/@branch-${NEXT_SHORT_TAG}/g" "${FILE}"
+  sed_runner "/shared-workflows/ s/@.*/@branch-${NEXT_SHORT_TAG}/g" "${FILE}"
 done
